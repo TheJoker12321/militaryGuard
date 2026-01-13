@@ -4,30 +4,42 @@ import { Role } from 'src/Authorization/roles.enum'
 
 export class AddSoldier {
 
-    @IsNotEmpty()
-    @IsInt()
-    id: number
 
-
-    @IsNotEmpty()
-    @IsInt()
-    @Min(10000)
-    @Max(10000000)
-    personNumber: number 
+    // @IsNotEmpty()
+    // @IsInt()
+    // @Min(10000)
+    // @Max(10000000)
+    // personNumber: number 
 
 
     @IsNotEmpty()
     @IsString()
     username: string
 
-    
+    @IsNotEmpty()
+    name : String
+
+
+    @IsNotEmpty()
+    lastName : String
+
+
     @IsNotEmpty()
     @IsString()
     password: string
 
     
+    @IsNotEmpty()
+    @IsEmail()
+    email : String
 
-    email: string
+
+    @IsNotEmpty()
+    militaryId: number
+
+    
+    @IsNotEmpty()
+    tz : number
 
 
     @IsNotEmpty()

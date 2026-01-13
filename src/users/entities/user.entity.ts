@@ -3,30 +3,35 @@ import { Table, Column, Model, Unique, AutoIncrement, PrimaryKey } from 'sequeli
 @Table
 export class User extends Model {
 
-  @Unique
-  @Column
-  username: string;
+    @AutoIncrement
+    @PrimaryKey
+    @Column
+    Id: number  
 
-  @Column
-  name: number;
+    @Unique
+    @Column
+    username: string;
 
-  @Column
-  last_name: string;
+    @Column
+    name: string;
 
-  @Unique
-  @Column
-  email : string;
+    @Column
+    lastName: string;
 
-  @Column
-  password : string;
+    @Unique
+    @Column
+    email : string;
 
-  @Unique
-  @Column
-  tz : string;
+    @Column
+    password : string;
 
-  @Column
-  military_id : string;
+    @Unique
+    @Column
+    tz : string;
 
-  @Column
-  role : 'SOLDIER' | 'COMMANDER'
+    @Column
+    militaryId : string;
+
+    @Column
+    roles : 'soldier' | 'commander'
 }

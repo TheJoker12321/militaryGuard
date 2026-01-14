@@ -2,7 +2,7 @@ import { Injectable, Req, Res, NotFoundException, Inject } from '@nestjs/common'
 import { AddSoldier } from './dto/addSoldier.dto';
 import * as bcrypt from 'bcrypt'
 import { User } from './entities/user.entity';
-import { where } from 'sequelize';
+
 
 @Injectable()
 export class UsersService {

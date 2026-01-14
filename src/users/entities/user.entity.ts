@@ -31,7 +31,7 @@ export class User extends Model {
 
     @Column
     militaryId : string;
-
+    
     @Column
     roles : 'soldier' | 'commander'
 }

@@ -5,13 +5,6 @@ import { Role } from 'src/Authorization/roles.enum'
 export class AddSoldier {
 
 
-    // @IsNotEmpty()
-    // @IsInt()
-    // @Min(10000)
-    // @Max(10000000)
-    // personNumber: number 
-
-
     @IsNotEmpty()
     @IsString()
     username: string

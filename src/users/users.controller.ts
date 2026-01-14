@@ -25,8 +25,6 @@ export class UsersController {
     @UseGuards(RolesGuard)
     @UseGuards(AuthGuard)
     @Get('soldier') 
-    @UseGuards()
-    @Roles(Role.Admin, Role.User)
     async getSoldiers() : Promise<object[]> {
 
        return await this.soldierService.getSoldiers()
@@ -48,8 +46,6 @@ export class UsersController {
     @UseGuards(RolesGuard)
     @UseGuards(AuthGuard)
     @Get('commander')
-    @UseGuards()
-    @Roles(Role.Admin)
     async getCommanders() : Promise<object[]> {
 
        return await this.soldierService.getCommanders()

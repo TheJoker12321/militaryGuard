@@ -32,7 +32,6 @@ export class AssignmentsController {
   @Roles(Role.Admin)
   @UseGuards(RolesGuard)
   @UseGuards(AuthGuard)
-  @Get()
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.assignmentsService.findOne(+id);
@@ -43,7 +42,6 @@ export class AssignmentsController {
   @Roles(Role.Admin)
   @UseGuards(RolesGuard)
   @UseGuards(AuthGuard)
-  @Get()
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.assignmentsService.remove(+id);

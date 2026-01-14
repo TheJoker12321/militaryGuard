@@ -30,6 +30,7 @@ export class ShiftsController {
 
 
   @Roles(Role.Admin, Role.User)
+  @UseGuards(RolesGuard)
   @UseGuards(AuthGuard)
   @Get(':id')
   findOne(@Param('id') id: string) {
@@ -38,6 +39,7 @@ export class ShiftsController {
 
 
   @Roles(Role.Admin, Role.User)
+  @UseGuards(RolesGuard)
   @UseGuards(AuthGuard)
   @Put(':id')
   update(@Param('id') id: string, @Body() updateShiftDto: UpdateShiftDto) {
@@ -46,6 +48,7 @@ export class ShiftsController {
 
 
   @Roles(Role.Admin)
+  @UseGuards(RolesGuard)
   @UseGuards(AuthGuard)
   @Delete(':id')
   remove(@Param('id') id: string) {

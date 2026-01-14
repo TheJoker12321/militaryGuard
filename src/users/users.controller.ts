@@ -4,6 +4,7 @@ import { UsersService } from './users.service';
 import { Roles } from 'src/Authorization/roles.decorator';
 import { Role } from 'src/Authorization/roles.enum';
 import { RolesGuard } from 'src/Authorization/roles.guard';
+import { AuthGuard } from 'src/authentiction/auth.guard';
 
 @Controller('users')
 export class UsersController {
@@ -20,6 +21,9 @@ export class UsersController {
     }
 
 
+    @Roles(Role.Admin, Role.User)
+    @UseGuards(RolesGuard)
+    @UseGuards(AuthGuard)
     @Get('soldier') 
     @UseGuards()
     @Roles(Role.Admin, Role.User)
@@ -29,6 +33,9 @@ export class UsersController {
 
     }
 
+    @Roles(Role.Admin, Role.User)
+    @UseGuards(RolesGuard)
+    @UseGuards(AuthGuard)
     @Get('soldier/:username')
     getByUsername(@Param('username') username: string) : object | void {
 
@@ -36,6 +43,10 @@ export class UsersController {
 
     }
 
+
+    @Roles(Role.Admin)
+    @UseGuards(RolesGuard)
+    @UseGuards(AuthGuard)
     @Get('commander')
     @UseGuards()
     @Roles(Role.Admin)
@@ -45,9 +56,10 @@ export class UsersController {
 
     }
 
+    @Roles(Role.Admin)
+    @UseGuards(RolesGuard)
+    @UseGuards(AuthGuard)
     @Get()
-    @UseGuards()
-    @Roles(Role.Admin, Role.User)
     findAll() : object | void {
 
         return this.soldierService.getAll()

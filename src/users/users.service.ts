@@ -12,7 +12,6 @@ export class UsersService {
     async addSoldier(soldier : AddSoldier) {
 
         soldier.password = await bcrypt.hash(soldier.password, 10)
-        console.log(soldier);
         
         await  this.usersRepository.create({...soldier})
 
